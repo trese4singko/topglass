@@ -1,0 +1,229 @@
+/* Importing Google Fonts - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+.table-container {
+  width: 100%;
+  max-width: 950px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-left: auto;
+  margin-right: auto;
+  max-height: 1000px;
+  height: 540px;
+  overflow-y: auto;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.table-container thead th {
+  position: sticky;
+  top: -1px;
+  background-color: #f8f9fa;
+  z-index: 10;
+}
+
+thead th {
+  color: black;
+  text-transform: uppercase;
+  font-size: smaller;
+  padding: 5px 1px;
+  text-align: center;
+  border: 1px solid gray;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  width: 80%;
+}
+
+tbody td {
+  text-align: center;
+  padding: 12px 15px;
+  border: 1px solid gray;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+.button-container {
+  display: flex;
+  /* gap: 5px; */
+  padding: 0;
+  /* align-items: center; */
+}
+
+/* Button Styling */
+
+button,
+.fa-stack {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  padding: -10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-align: center;
+}
+
+button.btndelete .fa-stack {
+  font-size: 15.8px;
+}
+
+button.edit,
+button.view {
+  background-color: #007bff;
+}
+
+button.edit:hover,
+button.view:hover {
+  background-color: #0056b3;
+}
+
+button.edit .fa-stack,
+button.view .fa-stack {
+  font-size: 12px;
+}
+
+/* Icon Styling */
+
+.fa-stack {
+  font-size: 1em;
+}
+
+.fa-stack-2x {
+  color: rgb(40, 171, 237);
+}
+
+.fa-stack-1x {
+  color: rgb(255, 255, 255);
+}
+
+.custom-colorpen {
+  color: yellow;
+}
+
+.custom-color {
+  color: rgb(248, 248, 248);
+}
+
+.btndelete {
+  border: 0px;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.custom-colortrash {
+  color: red;
+}
+
+/* Responsive Table */
+@media (max-width: 768px) {
+  table {
+    font-size: 14px;
+  }
+
+  thead th,
+  tbody td {
+    padding: 10px;
+  }
+}
+
+.date {
+  width: 200px;
+}
+.swal-export-btn,
+.swal-cancel-btn {
+  width: 120px;
+  height: 40px;
+  padding: 10px 0;
+  font-size: 16px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swal-export-btn,
+.swal-cancel-btn {
+  width: 120px;
+  height: 40px;
+  padding: 10px 0;
+  font-size: 16px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*SEARCH CSS */
+
+.search-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+/* Input field for search */
+#search {
+  padding: 8px;
+  width: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#exportButton {
+  width: 130px;
+  padding: 4px 15px;
+  background: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+#exportButton:hover {
+  background: #218838;
+  transform: scale(1.05);
+}
+
+.import-btn {
+  width: 100px;
+  padding: 6px 15px;
+  background: blue;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.import-btn:hover {
+  background: darkblue;
+  transform: scale(1.05);
+}
+
+.out-of-stock {
+  background-color: rgba(255, 0, 0, 0.651) !important;
+  /* Ensures red color is applied */
+  color: white !important;
+  /* White text for contrast */
+}
+
+.low-stock {
+  background-color: rgba(255, 166, 0, 0.616) !important;
+  /* Ensures orange color is applied */
+  color: white !important;
+  /* White text for contrast */
+}
+
+.bord {
+  border: 1px solid #ccc;
+}

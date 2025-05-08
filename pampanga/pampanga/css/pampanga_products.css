@@ -1,0 +1,446 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 0px;
+}
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  height: 100vh;
+  background-color: #f4f4f9;
+}
+
+.box {
+  width: 100%;
+  height: 30px;
+  padding: 20px;
+  border: 30px solid white;
+  background-color: white;
+  color: white;
+  text-align: center;
+  line-height: 1.5;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar {
+  position: fixed;
+  width: 270px;
+  margin: 0px;
+  border-radius: 0px;
+  background: #0b409c;
+  height: 100vh;
+  transition: all 0.4s ease;
+}
+
+.sidebar.collapsed {
+  width: 85px;
+}
+
+.sidebar .sidebar-header {
+  display: flex;
+  position: relative;
+  padding: 25px 20px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sidebar-header .header-logo img {
+  width: 46px;
+  height: 46px;
+  display: block;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+.sidebar-header .toggler {
+  height: 35px;
+  width: 35px;
+  color: #151a2d;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  background: #fff;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  transition: 0.4s ease;
+}
+
+.sidebar-header .sidebar-toggler {
+  position: absolute;
+  right: 20px;
+}
+
+.sidebar-header .menu-toggler {
+  display: none;
+}
+
+.sidebar.collapsed .sidebar-header .toggler {
+  transform: translate(-4px, 65px);
+}
+
+.sidebar-header .toggler:hover {
+  background: #dde4fb;
+}
+
+.sidebar-header .toggler span {
+  font-size: 1.75rem;
+  transition: 0.4s ease;
+}
+
+.sidebar.collapsed .sidebar-header .toggler span {
+  transform: rotate(180deg);
+}
+
+.sidebar-nav .nav-list {
+  list-style: none;
+  display: flex;
+  gap: 4px;
+  padding: 0 15px;
+  flex-direction: column;
+  transform: translateY(15px);
+  transition: 0.4s ease;
+}
+
+.sidebar.collapsed .sidebar-nav .primary-nav {
+  transform: translateY(65px);
+}
+
+.sidebar-nav .nav-link {
+  color: #fff;
+  display: flex;
+  gap: 12px;
+  white-space: nowrap;
+  border-radius: 8px;
+  padding: 12px 15px;
+  align-items: center;
+  text-decoration: none;
+  transition: 0.4s ease;
+}
+
+.sidebar.collapsed .sidebar-nav .nav-link {
+  border-radius: 12px;
+}
+
+.sidebar .sidebar-nav .nav-link .nav-label {
+  transition: opacity 0.3s ease;
+}
+
+.sidebar.collapsed .sidebar-nav .nav-link .nav-label {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.sidebar-nav .nav-link:hover {
+  color: #151a2d;
+  background: #fff;
+}
+
+.sidebar-nav .nav-item {
+  position: relative;
+}
+
+.sidebar-nav .nav-tooltip {
+  position: absolute;
+  top: -10px;
+  opacity: 0;
+  color: #151a2d;
+  display: none;
+  pointer-events: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  white-space: nowrap;
+  background: #fff;
+  left: calc(100% + 25px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  transition: 0s;
+}
+
+.sidebar.collapsed .sidebar-nav .nav-tooltip {
+  display: block;
+}
+
+.sidebar-nav .nav-item:hover .nav-tooltip {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(50%);
+  transition: all 0.4s ease;
+}
+
+.sidebar-nav .secondary-nav {
+  position: absolute;
+  bottom: 30px;
+  width: 100%;
+}
+
+/* Main content's transition when the sidebar is collapsed/expanded */
+.main {
+  position: fixed;
+  margin-left: 300px; /* Initial offset when sidebar is expanded */
+  margin-top: 20px;
+  transition: all 0.4s ease; /* Smooth transition */
+}
+
+.sidebar.collapsed + .main {
+  margin-left: 300px; /* Adjust this to match the collapsed sidebar width */
+}
+
+/* Responsive media query code for small screens */
+@media (max-width: 1024px) {
+  .sidebar {
+    height: 56px;
+    margin: 13px;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    width: calc(100% - 26px);
+    max-height: calc(100vh - 26px);
+  }
+
+  .sidebar.menu-active {
+    overflow-y: auto;
+  }
+
+  .sidebar .sidebar-header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    border-radius: 16px;
+    background: #151a2d;
+    padding: 8px 10px;
+  }
+
+  .sidebar-header .header-logo img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .sidebar-header .sidebar-toggler,
+  .sidebar-nav .nav-item:hover .nav-tooltip {
+    display: none;
+  }
+
+  .sidebar-header .menu-toggler {
+    display: flex;
+    height: 30px;
+    width: 30px;
+  }
+
+  .sidebar-header .menu-toggler span {
+    font-size: 1.3rem;
+  }
+
+  .sidebar .sidebar-nav .nav-list {
+    padding: 0 10px;
+  }
+
+  .sidebar-nav .nav-link {
+    gap: 10px;
+    padding: 10px;
+    font-size: 0.94rem;
+  }
+
+  .sidebar-nav .nav-link .nav-icon {
+    font-size: 1.37rem;
+  }
+
+  .sidebar-nav .secondary-nav {
+    position: relative;
+    bottom: 0;
+    margin: 40px 0 30px;
+  }
+
+  /* Add a black background color to the top navigation */
+  .topnav {
+    background-color: black;
+    overflow: hidden;
+  }
+
+  /* Style the links inside the navigation bar */
+  .topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 20px 7px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+
+  /* Change the color of links on hover */
+  .topnav a:hover {
+    background-color: white;
+    color: white;
+  }
+
+  /* Add a color to the active/current link */
+  .topnav a.active {
+    background-color: white;
+    color: white;
+  }
+}
+
+.sidebar-header .welcome {
+  text-align: left;
+  margin-left: 10px;
+  color: white;
+  margin-top: 100px;
+}
+
+.logs {
+  display: flex;
+}
+
+.dotted {
+  margin-left: 5px;
+}
+
+.welcome {
+  position: absolute;
+  top: -70px; /* Move it a little higher from the default position */
+  left: 50%; /* Keep it centered horizontally */
+  transform: translateX(
+    -50%
+  ); /* Center i.table-container {
+    padding: 20px;
+    background-color: #f4f4f4; /* Match the sidebar's background color */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Centering the table */
+.center-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Table container styling */
+.table-container {
+  width: 100%;
+  max-width: 1200px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
+  margin-left: -32px;
+}
+
+/* Table Styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+/* Table Header Styling */
+thead th {
+  color: black;
+  text-transform: uppercase;
+  font-size: 14px;
+  padding: 12px 15px;
+  text-align: left;
+  border: 1px solid #ddd;
+  letter-spacing: 0.5px;
+}
+
+/* Table Body Styling */
+tbody td {
+  padding: 12px 15px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+/* Zebra Striping for Rows */
+tbody tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+/* Action Button Container */
+.button-container {
+  display: flex; /* Use flexbox to align buttons horizontally */
+  gap: 5px; /* Smaller space between buttons */
+  align-items: center;
+}
+
+/* Button Styling */
+button,
+.fa-stack {
+  width: 30px; /* Smaller button width */
+  height: 30px; /* Smaller button height */
+  border-radius: 50%; /* Make buttons circular */
+  padding: -10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-align: center; /* Center icons inside the buttons */
+}
+
+button.btndelete .fa-stack {
+  font-size: 15.8px; /* Smaller icon size */
+}
+
+/* Edit Button Styling */
+button.edit,
+button.view {
+  background-color: #007bff; /* Blue background for edit button */
+}
+button.edit:hover,
+button.view:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+button.edit .fa-stack,
+button.view .fa-stack {
+  font-size: 12px; /* Smaller icon size */
+}
+
+/* Icon Styling */
+.fa-stack {
+  font-size: 1em; /* Reduced font size for smaller icons */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  table {
+    font-size: 14px;
+  }
+
+  thead th,
+  tbody td {
+    padding: 10px;
+  }
+
+  .button-container {
+    flex-direction: column; /* Stack buttons vertically on small screens */
+    gap: 5px;
+  }
+}
+
+.fa-stack-2x {
+  color: rgb(40, 171, 237);
+}
+
+.fa-stack-1x {
+  color: rgb(255, 255, 255);
+}
+
+.custom-colorpen {
+  color: yellow;
+}
+
+.custom-color {
+  color: rgb(248, 248, 248);
+}
+
+.btndelete {
+  border: 0px;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.custom-colortrash {
+  color: red;
+}

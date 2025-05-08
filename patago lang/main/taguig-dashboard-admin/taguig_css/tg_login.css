@@ -1,0 +1,124 @@
+body {
+  background-color: rgb(100, 100, 245);
+}
+.box {
+  background-color: white;
+  height: 500px;
+  margin: 50px;
+  margin-top: 80px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  width: 800px;
+}
+.container {
+  justify-content: center;
+  display: flex;
+}
+.content {
+  display: flex;
+}
+.logo {
+  height: 500px;
+}
+.both {
+  height: 50px;
+  border-radius: 10px;
+}
+.form-group {
+  margin-bottom: 20px;
+}
+input[type="text"],
+input[type="password"] {
+  width: 250px;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 15px;
+  font-size: 16px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+input[type="text"]:focus,
+input[type="password"]:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 8px rgba(52, 152, 219, 0.5);
+  transform: scale(1.02);
+}
+input[type="text"]:hover,
+input[type="password"]:hover {
+  border-color: #2980b9;
+}
+input::placeholder {
+  color: #7f8c8d;
+  transition: opacity 0.3s ease;
+}
+input[type="text"]:focus::placeholder,
+input[type="password"]:focus::placeholder {
+  opacity: 0.6;
+}
+input[type="text"],
+input[type="password"] {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+H2 {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: gray;
+  margin-top: 50px;
+  font-size: larger;
+}
+.custom-control {
+  position: relative;
+}
+.custom-control input[type="checkbox"] {
+  display: none;
+}
+.custom-control label {
+  cursor: pointer;
+  font-size: 18px;
+  display: inline-flex;
+  align-items: center;
+}
+.custom-control label::before {
+  content: "\1F576";
+  font-size: 1.5rem;
+  margin-right: 8px;
+}
+.password {
+  font-size: 16px;
+  padding: 10px;
+  width: 100%;
+}
+.custom-control input[type="checkbox"]:checked ~ label::before {
+  content: "\1F441";
+}
+.custom-control label::before {
+  transition: content 0.3s ease;
+}
+.small {
+  margin-top: -73px;
+  margin-left: 240px;
+}
+.btnlogin {
+  height: 50px;
+  width: 150px;
+  border-radius: 10px;
+  margin-left: 70px;
+  margin-top: 20px;
+  border-color: rgb(123, 123, 221);
+  background-color: rgb(53, 53, 158);
+  font-size: smaller;
+  color: white;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.line {
+  border-bottom: 1px solid rgb(146, 140, 140);
+  margin-top: 20px;
+  width: 270px;
+}
+.btnlogin:hover {
+  background-color: #121cad;
+}
+input {
+  color: gray;
+}

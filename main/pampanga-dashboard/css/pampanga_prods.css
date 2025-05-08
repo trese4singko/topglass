@@ -1,0 +1,203 @@
+/* Importing Google Fonts - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+.out-of-stock {
+  background-color: rgba(255, 0, 0, 0.651) !important;
+  /* Ensures red color is applied */
+  color: white !important;
+  /* White text for contrast */
+}
+
+.low-stock {
+  background-color: rgba(255, 166, 0, 0.616) !important;
+  /* Ensures orange color is applied */
+  color: white !important;
+  /* White text for contrast */
+}
+
+.bord {
+  border: 1px solid #ccc;
+}
+/* Table Container */
+.table-container {
+  width: 980px;
+  max-width: 1350px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-left: -20px;
+  max-height: 540px;
+  overflow-y: auto;
+  overflow-x: auto;
+}
+
+/* Table Styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+/* Table Header Fixed */
+.table-container thead th {
+  position: sticky;
+  top: -1px;
+  background-color: #f8f9fa;
+  z-index: 10;
+}
+
+/* Table Header */
+thead th {
+  color: black;
+  text-transform: uppercase;
+  font-size: smaller;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid gray;
+  white-space: nowrap;
+}
+
+tbody td {
+  text-align: center;
+  padding: 12px;
+  border: 1px solid gray;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+.button-container {
+  display: flex;
+  padding: 0;
+  gap: 5px;
+}
+
+button,
+.fa-stack {
+  transition: background-color 0.3s ease;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+}
+
+button.btndelete .fa-stack {
+  font-size: 1.5em;
+}
+
+button.edit,
+button.view {
+  background-color: #007bff;
+}
+
+button.edit:hover,
+button.view:hover {
+  background-color: #0056b3;
+}
+
+button.edit .fa-stack,
+button.view .fa-stack {
+  font-size: 5px;
+}
+
+/* Icon Styling */
+.fa-stack {
+  font-size: 1.2em;
+}
+
+.fa-stack-2x {
+  color: rgb(40, 171, 237);
+}
+
+.fa-stack-1x {
+  color: rgb(255, 255, 255);
+}
+
+.custom-colorpen {
+  color: yellow;
+}
+
+.custom-color {
+  color: rgb(248, 248, 248);
+}
+
+.btndelete {
+  background-color: transparent;
+}
+
+.custom-colortrash {
+  color: red;
+}
+
+.btnDelete {
+  background-color: red;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Responsive Table */
+@media (max-width: 768px) {
+  table {
+    font-size: 14px;
+  }
+
+  thead th,
+  tbody td {
+    padding: 10px;
+  }
+}
+
+.date {
+  width: 200px;
+}
+
+.swal-export-btn,
+.swal-cancel-btn {
+  width: 120px; /* Adjust width */
+  height: 40px; /* Set a fixed height */
+  padding: 10px 0; /* Padding for spacing */
+  font-size: 16px;
+  text-align: center; /* Center text horizontally */
+  display: flex;
+  justify-content: center; /* Center text horizontally */
+  align-items: center; /* Center text vertically */
+}
+
+/*SEARCH CSS */
+
+/* Container for the search and buttons */
+.search-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+/* Input field for search */
+#search {
+  padding: 8px;
+  width: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-left: -20px;
+}
+
+/* Export button specific styles */
+#exportButton {
+  width: 130px; /* Increased width for better visibility */
+  padding: 4px 15px; /* Increased padding for a larger button */
+  background: #28a745; /* A brighter green for better visibility */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s; /* Smooth transition for hover effects */
+}
+
+/* Export button hover effect */
+#exportButton:hover {
+  background: #218838; /* Darker green on hover */
+  transform: scale(1.05); /* Slightly enlarge the button on hover */
+}

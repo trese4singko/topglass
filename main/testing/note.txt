@@ -1,0 +1,78 @@
+
+<?php
+// Set session parameters before starting the session
+ 
+// Set session parameters
+ini_set('session.gc_maxlifetime', 10); // Set to 30 seconds for testing
+ini_set('session.gc_probability', 1);
+ini_set('session.gc_divisor', 100);
+session_set_cookie_params(0); // Expires when the browser is closed
+session_start();
+
+// Check if session has expired (30 seconds of inactivity)
+if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity']) > 10) {
+    // Session expired
+    // Update session token in the database to NULL
+    $user_id = $_SESSION['user_id'];
+    $stmt = $pdo->prepare("UPDATE users SET session_token = NULL WHERE user_id = :user_id");
+    $stmt->execute(['user_id' => $user_id]);
+
+    // Unset all session variables and destroy the session
+    session_unset();
+    session_destroy();
+} else {
+    // Update the last activity time
+    $_SESSION['last_activity'] = time();
+}
+ 
+
+
+
+include_once 'connection.php';  // Database connection
+
+$timeout = 30; // 10 sec (in seconds)
+$timeout_duration = 32; // 10 sec (in seconds)
+$inactivity_limit = 32; // 10 sec (in seconds)
+
+if (isset($_SESSION['userid'])) {
+  $userid = $_SESSION['userid'];
+
+  $result = mysqli_query($con, "SELECT last_active FROM usertb WHERE userid = '$userid'");
+  $row = mysqli_fetch_assoc($result);
+
+
+
+  if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity']) > $inactivity_limit) {
+    mysqli_query($con, "UPDATE usertb SET session_token = NULL WHERE userid = '$userid'");
+    session_unset();
+    session_destroy();
+    header('Location: index.php?session=expired');
+    exit();
+  }
+
+  $_SESSION['last_activity'] = time();
+  mysqli_query($con, "UPDATE usertb SET last_active = NOW() WHERE userid = '$userid'");
+} else {
+  header('Location: ../index.php');
+  exit();
+}
+
+if (!isset($_SESSION['usertype'])) {
+  header('Location: ../index.php');
+  exit();
+}
+
+switch ($_SESSION['usertype']) {
+  case 'admin':
+    break;
+  default:
+    header('Location: ../index.php');
+    exit();
+}
+
+include('functions.php');
+// Safely assign session variables
+$usertype = isset($_SESSION['usertype']) ? htmlspecialchars($_SESSION['usertype']) : 'Guest';
+$nickname = isset($_SESSION['nickname']) ? htmlspecialchars($_SESSION['nickname']) : 'Guest';
+$username = isset($_SESSION['username']) ? htmlspecialchars($_SESSION['username']) : 'Guest';
+

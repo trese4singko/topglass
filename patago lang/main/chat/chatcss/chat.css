@@ -1,0 +1,90 @@
+#message {
+    height: 60px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+    background-color: #f9f9f9;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  #message.image-selected {
+    background-color: transparent;
+  }
+  
+  .file-upload-label {
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  
+  #file-upload {
+    display: none;
+    cursor: pointer;
+  }
+  
+  .file-upload-label:hover {
+    color: green;
+  }
+  
+  #user-search {
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+    background-color: #f9f9f9;
+    margin-bottom: 15px;
+    transition: border-color 0.3s ease;
+  }
+  
+  #user-search:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  .user {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.3s ease;
+  }
+  
+  .user:hover {
+    background-color: #f1f1f1;
+  }
+  
+  #chat-header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+  }
+  
+  #chat-header {
+    margin: 0;
+    font-size: 24px;
+  }
+  
+  #delete-messages-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+  
+  #delete-messages-btn i {
+    color: green;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  #delete-messages-btn i:hover {
+    color: red;
+    transform: scale(1.2);
+  }
+  

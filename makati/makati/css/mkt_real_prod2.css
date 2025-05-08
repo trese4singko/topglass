@@ -1,0 +1,521 @@
+/* Importing Google Fonts - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 0px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  height: 100vh;
+  background-color: #f4f4f9;
+  background-image: url("logo-remove-bg.png");
+  background-color: rgba(97, 154, 230, 0.486);
+  background-blend-mode: overlay;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: 65% 75%;
+}
+
+.content{
+    display: flex; 
+    gap: 20px;
+}
+h6{
+    margin-top: -25px;
+}
+.box {
+    width: 100%;              /* Adjust container width as needed */
+    padding-top: 30px;
+    height: 20px;
+    border: 10px solid white;
+    background-color: white;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    
+  }
+  
+  .site-logo {
+    width: 50px;               /* Makes the logo fill the container width */
+    height: 50px;              /* Maintains the aspect ratio */
+  
+    display: flex;         /* Optional: limits the maximum width */
+    justify-content: start;
+    margin-top: -45px;
+    margin-left: -2px;
+  }
+  
+
+.sidebar {
+  position: fixed;
+  width: 270px;
+  margin: 100px;
+  border-radius: 0px;
+  background: #0b409c;
+  height: 100vh;
+  transition: all 0.4s ease;
+  margin-left: -10px;
+  margin-top: 50px;
+
+}
+
+.sidebar.collapsed {
+  width: 85px;
+}
+
+.sidebar .sidebar-header {
+  display: flex;
+  position: relative;
+  padding: 25px 20px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sidebar-header .header-logo img {
+  width: 46px;
+  height: 46px;
+  display: block;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+.sidebar-header .toggler {
+  height: 35px;
+  width: 35px;
+  color: #151a2d;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  background: #fff;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  transition: 0.4s ease;
+}
+
+.sidebar-header .sidebar-toggler {
+  position: absolute;
+  right: 20px;
+}
+
+.sidebar-header .menu-toggler {
+  display: none;
+}
+
+.sidebar.collapsed .sidebar-header .toggler {
+  transform: translate(-4px, 65px);
+}
+
+.sidebar-header .toggler:hover {
+  background: #dde4fb;
+}
+
+.sidebar-header .toggler span {
+  font-size: 1.75rem;
+  transition: 0.4s ease;
+}
+
+.sidebar.collapsed .sidebar-header .toggler span {
+  transform: rotate(180deg);
+}
+
+.sidebar-nav .nav-list {
+  list-style: none;
+  display: flex;
+  gap: 4px;
+  padding: 0 15px;
+  flex-direction: column;
+  transform: translateY(15px);
+  transition: 0.4s ease;
+}
+
+.sidebar.collapsed .sidebar-nav .primary-nav {
+  transform: translateY(65px);
+}
+
+.sidebar-nav .nav-link {
+  color: #fff;
+  display: flex;
+  gap: 12px;
+  white-space: nowrap;
+  border-radius: 8px;
+  padding: 12px 15px;
+  align-items: center;
+  text-decoration: none;
+  transition: 0.4s ease;
+}
+
+.sidebar.collapsed .sidebar-nav .nav-link {
+  border-radius: 12px;
+}
+
+.sidebar .sidebar-nav .nav-link .nav-label {
+  transition: opacity 0.3s ease;
+}
+
+.sidebar.collapsed .sidebar-nav .nav-link .nav-label {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.sidebar-nav .nav-link:hover {
+  color: #151a2d;
+  background: #fff;
+}
+
+.sidebar-nav .nav-item {
+  position: relative;
+}
+
+.sidebar-nav .nav-tooltip {
+  position: absolute;
+  top: -10px;
+  opacity: 0;
+  color: #151a2d;
+  display: none;
+  pointer-events: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  white-space: nowrap;
+  background: #fff;
+  left: calc(100% + 25px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  transition: 0s;
+}
+
+.sidebar.collapsed .sidebar-nav .nav-tooltip {
+  display: block;
+}
+
+.sidebar-nav .nav-item:hover .nav-tooltip {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(50%);
+  transition: all 0.4s ease;
+}
+
+.sidebar-nav .secondary-nav {
+  position: absolute;
+  bottom: 80px;
+  width: 100%;
+}
+
+/* Main content's transition when the sidebar is collapsed/expanded */
+.main {
+  position: fixed;
+  margin-left: 300px; /* Initial offset when sidebar is expanded */
+  margin-top: 20px;
+  transition: all 0.4s ease; /* Smooth transition */
+}
+
+.sidebar.collapsed + .main {
+  margin-left: 300px; /* Adjust this to match the collapsed sidebar width */
+}
+
+/* Responsive media query code for small screens */
+@media (max-width: 1024px) {
+  .sidebar {
+    height: 56px;
+    margin: 13px;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    width: calc(100% - 26px);
+    max-height: calc(100vh - 26px);
+  }
+
+  .sidebar.menu-active {
+    overflow-y: auto;
+  }
+
+  .sidebar .sidebar-header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    border-radius: 16px;
+    background: #151a2d;
+    padding: 8px 10px;
+  }
+
+  .sidebar-header .header-logo img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .sidebar-header .sidebar-toggler,
+  .sidebar-nav .nav-item:hover .nav-tooltip {
+    display: none;
+  }
+
+  .sidebar-header .menu-toggler {
+    display: flex;
+    height: 30px;
+    width: 30px;
+  }
+
+  .sidebar-header .menu-toggler span {
+    font-size: 1.3rem;
+  }
+
+  .sidebar .sidebar-nav .nav-list {
+    padding: 0 10px;
+  }
+
+  .sidebar-nav .nav-link {
+    gap: 10px;
+    padding: 10px;
+    font-size: 0.94rem;
+  }
+
+  .sidebar-nav .nav-link .nav-icon {
+    font-size: 1.37rem;
+  }
+
+  .sidebar-nav .secondary-nav {
+    position: relative;
+    bottom: 0;
+    margin: 40px 0 30px;
+  }
+
+  /* Add a black background color to the top navigation */
+  .topnav {
+    background-color: black;
+    overflow: hidden;
+  }
+
+  /* Style the links inside the navigation bar */
+  .topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 20px 7px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+
+  /* Change the color of links on hover */
+  .topnav a:hover {
+    background-color: white;
+    color: white;
+  }
+
+  /* Add a color to the active/current link */
+  .topnav a.active {
+    background-color: white;
+    color: white;
+  }
+}
+
+.sidebar-header .welcome {
+  text-align: left;
+  margin-left: 10px;
+  color: white;
+  margin-top: 100px;
+}
+
+.logs {
+  display: flex;
+}
+
+.dotted {
+  margin-left: 5px;
+}
+
+.welcome {
+  position: absolute;
+  top: -70px; /* Move it a little higher from the default position */
+  left: 50%; /* Keep it centered horizontally */
+  transform: translateX(-50%); /* Center it correctly */
+}
+
+        /* Table Container */
+        .table-container {
+            width: 100%;
+            max-width: 1000px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-left: -20px;
+            max-height: 540px;
+            overflow-y: auto;
+            overflow-x: auto;
+        }
+
+        /* Table Styling */
+        table {
+            width: 130%;
+            border-collapse: collapse;
+            border-radius: 8px;
+            background-color: #fff;
+        }
+
+        /* Table Header Fixed */
+        .table-container thead th {
+            position: sticky;
+            top: -1px;
+            background-color: #f8f9fa;
+            z-index: 10;
+        }
+
+        /* Table Header */
+        thead th {
+            color: black;
+            text-transform: uppercase;
+            font-size: smaller;
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ddd;
+            white-space: nowrap;
+        }
+
+        /* Table Body */
+        tbody td {
+            text-align: center;
+            padding: 12px;
+            border: 1px solid #ddd;
+        }
+
+        /* Zebra Striping */
+        tbody tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        /* Button Container */
+        .button-container {
+            display: flex;
+            padding: 0;
+            gap: -100px;
+        }
+
+        button,
+        .fa-stack {
+            transition: background-color 0.3s ease;
+            text-align: center;
+        }
+
+        button.btndelete .fa-stack {
+            font-size: 20px; /* Adjust this value to change the size */
+        }
+
+        button.edit,
+        button.view {
+            background-color: #007bff;
+        }
+
+        button.edit:hover,
+        button.view:hover {
+            background-color: #0056b3;
+        }
+
+        button.edit .fa-stack,
+        button.view .fa-stack {
+            font-size: 5px;
+        }
+
+        /* Icon Styling */
+        .fa-stack {
+            font-size: 1.2em;
+        }
+
+        .fa-stack-2x {
+            color: rgb(40, 171, 237);
+        }
+
+        .fa-stack-1x {
+            color: rgb(255, 255, 255);
+        }
+
+        .custom-colorpen {
+            color: yellow;
+        }
+
+        .custom-color {
+            color: rgb(248, 248, 248);
+        }
+
+        .btndelete {
+            background-color: transparent;
+        }
+
+        .custom-colortrash {
+        color: red; /* Red color for the trash icon */
+        }
+
+    .btnDelete {
+        background-color: transparent;
+        margin-top: -6px; /* Adjust this value to move it upwards */
+        display: flex; /* Optional: if you want to use flexbox */
+        align-items: center; /* Optional: center items vertically */
+        justify-content: center; /* Optional: center items horizontally */
+        border: none;
+    }
+
+/* Responsive Table */
+        @media (max-width: 768px) {
+            table {
+                font-size: 14px;
+            }
+
+            thead th,
+            tbody td {
+                padding: 10px;
+            }
+        }
+
+        .date {
+            width: 200px;
+        }
+
+.swal-export-btn,
+.swal-cancel-btn {
+  width: 120px; /* Adjust width */
+  height: 40px; /* Set a fixed height */
+  padding: 10px 0; /* Padding for spacing */
+  font-size: 16px;
+  text-align: center; /* Center text horizontally */
+  display: flex;
+  justify-content: center; /* Center text horizontally */
+  align-items: center; /* Center text vertically */
+}
+
+/*SEARCH CSS */
+
+/* Container for the search and buttons */
+.search-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+/* Input field for search */
+#search {
+  padding: 8px;
+  width: 200px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-left: -20px;
+}
+
+/* Export button specific styles */
+#exportButton {
+  width: 130px; /* Increased width for better visibility */
+  padding: 7px 15px; /* Increased padding for a larger button */
+  background: #28a745; /* A brighter green for better visibility */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s; /* Smooth transition for hover effects */
+}
+
+/* Export button hover effect */
+#exportButton:hover {
+  background: #218838; /* Darker green on hover */
+  transform: scale(1.05); /* Slightly enlarge the button on hover */
+}

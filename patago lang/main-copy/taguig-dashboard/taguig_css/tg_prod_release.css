@@ -1,0 +1,251 @@
+.flex-container {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5px;
+  margin-left: -320px;
+}
+
+/* Container Styles */
+
+.container1,
+.container2 {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 95%;
+  margin-bottom: 10px;
+}
+
+/* Customer and Product Details Styles */
+
+.customer-details,
+.product-details {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Input Styles */
+
+.nova-input {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.nova-input span {
+  margin-right: 15px;
+  width: 150px;
+}
+
+.nova-input input,
+.nova-input select {
+  flex-grow: 1;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+  padding: 9px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 12px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  flex: 1;
+  background-color: #fff;
+  margin-bottom: 15px;
+}
+
+/* Focus styles */
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Optional: Add styles for disabled inputs */
+
+input[type="text"]:disabled,
+input[type="number"]:disabled,
+select:disabled {
+  background-color: #f9f9f9;
+  border-color: #ddd;
+  color: #aaa;
+}
+
+.customer-details span:first-child {
+  margin-left: 30px;
+}
+
+.product-details span:last-child {
+  margin-left: 30px;
+}
+
+/* Button Styles */
+
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-right: 10px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+#orderedItems {
+  margin-top: 20px;
+  max-height: 200px;
+  overflow-y: auto;
+  padding: 10px;
+  background-color: #f9f9f9;
+}
+
+.ordered-item {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.ordered-item span {
+  margin-right: 10px;
+}
+
+.delete {
+  background-color: #dc3545;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-left: auto;
+  
+}
+
+.delete:hover {
+  background-color: #c82333;
+}
+
+/* Responsive adjustments */
+
+@media (max-width: 900px) {
+  .flex-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .nova-input {
+    flex-direction: row;
+  }
+}
+
+.swal-export-btn,
+.swal-cancel-btn {
+  width: 120px; 
+  height: 40px; 
+  padding: 10px 0;
+  font-size: 16px;
+  text-align: center; 
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+}
+
+/*SEARCH CSS */
+
+/* Container for the search and buttons */
+.search-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+/* Input field for search */
+#search {
+  padding: 8px;
+  width: 150px; 
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Export button specific styles */
+#exportButton {
+  width: 130px; 
+  padding: 9px 15px; 
+  background: #28a745; 
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s; 
+}
+
+/* Export button hover effect */
+#exportButton:hover {
+  background: #218838; 
+  transform: scale(1.05); 
+}
+
+/* Import button styling */
+.import-btn {
+  width: 100px; 
+  padding: 6px 15px; 
+  background: blue; 
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s; 
+}
+
+/* Import button hover effect */
+.import-btn:hover {
+  background: darkblue; 
+  transform: scale(1.05); 
+}
+
+/*SUGGESTIONS CSS*/
+
+.suggestions-box {
+  border: 1px solid #ccc;
+  max-height: 150px;
+  overflow-y: auto;
+  position: absolute;
+  background-color: white;
+  z-index: 1000;
+  margin-top: -15px;
+}
+
+.suggestion-item {
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for background and shadow */
+}
+
+.suggestion-item:hover {
+  background-color: #d0e0f0; /* Light blue background on hover */
+}
+
+.suggestion-item.selected {
+  background-color: #a0c0e0; /* Darker blue background for selected item */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* More pronounced shadow effect */
+}
+

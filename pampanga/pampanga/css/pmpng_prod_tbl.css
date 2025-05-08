@@ -1,0 +1,277 @@
+/* Importing Google Fonts - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+/* Table Container */
+.table-container {
+  width: 1050;
+  max-width: 2000px;
+  /* Adjust table width as needed */
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-left: auto;
+  margin-right: auto;
+  max-height: 1000px;
+  height: 620px;
+  overflow-y: auto;
+
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  /* Ensures it takes the full width of the container */
+  /* Ensures a minimum width */
+  border-collapse: collapse;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+/* Table header fixed */
+
+.table-container thead th {
+  position: sticky;
+  top: -1px;
+  background-color: #f8f9fa;
+  z-index: 10;
+}
+
+/* Table Header Styling */
+
+thead th {
+  color: black;
+  text-transform: uppercase;
+  font-size: smaller;
+  padding: 5px 1px;
+  text-align: center;
+  /* Center the header text */
+  border: 1px solid gray;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  width: 80%;
+}
+
+/* Table Body Styling */
+
+tbody td {
+  text-align: center;
+  padding: 12px 15px;
+  /* Center the table data */
+  border: 1px solid gray;
+}
+
+/* Zebra Striping for Rows */
+
+tbody tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+/* Action Button Container */
+
+.button-container {
+  display: flex;
+  /* gap: 5px; */
+  padding: 0;
+  /* align-items: center; */
+}
+
+/* Button Styling */
+
+button,
+.fa-stack {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  padding: -10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-align: center;
+}
+
+button.btndelete .fa-stack {
+  font-size: 15.8px;
+}
+
+button.edit,
+button.view {
+  background-color: #007bff;
+}
+
+button.edit:hover,
+button.view:hover {
+  background-color: #0056b3;
+}
+
+button.edit .fa-stack,
+button.view .fa-stack {
+  font-size: 12px;
+}
+
+/* Icon Styling */
+
+.fa-stack {
+  font-size: 1em;
+}
+
+.fa-stack-2x {
+  color: rgb(40, 171, 237);
+}
+
+.fa-stack-1x {
+  color: rgb(255, 255, 255);
+}
+
+.custom-colorpen {
+  color: yellow;
+}
+
+.custom-color {
+  color: rgb(248, 248, 248);
+}
+
+.btndelete {
+  border: 0px;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.custom-colortrash {
+  color: red;
+}
+
+/* Responsive Table */
+@media (max-width: 768px) {
+  table {
+    font-size: 14px;
+  }
+
+  thead th,
+  tbody td {
+    padding: 10px;
+  }
+}
+
+.date {
+  width: 200px;
+}
+.swal-export-btn,
+.swal-cancel-btn {
+  width: 120px; /* Adjust width */
+  height: 40px; /* Set a fixed height */
+  padding: 10px 0; /* Padding for spacing */
+  font-size: 16px;
+  text-align: center; /* Center text horizontally */
+  display: flex;
+  justify-content: center; /* Center text horizontally */
+  align-items: center; /* Center text vertically */
+}
+
+.swal-export-btn,
+.swal-cancel-btn {
+  width: 120px; /* Adjust width */
+  height: 40px; /* Set a fixed height */
+  padding: 10px 0; /* Padding for spacing */
+  font-size: 16px;
+  text-align: center; /* Center text horizontally */
+  display: flex;
+  justify-content: center; /* Center text horizontally */
+  align-items: center; /* Center text vertically */
+}
+
+/*SEARCH CSS */
+
+/* Container for the search and buttons */
+.search-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+/* Input field for search */
+#search {
+  padding: 8px;
+  width: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Export button specific styles */
+#exportButton {
+  width: 130px; /* Increased width for better visibility */
+  padding: 4px 15px; /* Increased padding for a larger button */
+  background: #28a745; /* A brighter green for better visibility */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s; /* Smooth transition for hover effects */
+}
+
+/* Export button hover effect */
+#exportButton:hover {
+  background: #218838; /* Darker green on hover */
+  transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
+
+.import-btn:hover {
+  background: darkblue;
+  transform: scale(1.05);
+}
+
+.file {
+  display: block;
+  margin: 20px 0;
+  padding: 5px;
+  font-size: 16px;
+  color: #333;
+  background-color: #f9f9f9;
+  border: 2px dashed #ccc;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+  width: 250px;
+}
+
+.file:hover {
+  border-color: #666;
+  background-color: #f0f0f0;
+}
+
+.file:focus {
+  outline: none;
+  border-color: #007bff;
+  background-color: #e9f5ff;
+}
+
+.up {
+  margin-top: -50px;
+}
+.import-btn {
+  width: 100px;
+  height: 30px;
+  background: blue;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.out-of-stock {
+  background-color: rgba(255, 0, 0, 0.651) !important;
+  /* Ensures red color is applied */
+  color: white !important;
+  /* White text for contrast */
+}
+
+.low-stock {
+  background-color: rgba(255, 166, 0, 0.616) !important;
+  /* Ensures orange color is applied */
+  color: white !important;
+  /* White text for contrast */
+}
+
+.bord {
+  border: 1px solid #ccc;
+}

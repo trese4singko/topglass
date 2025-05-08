@@ -1,0 +1,67 @@
+
+.header-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px; /* <-- Controls spacing between notification and personal icons */
+  position: absolute;
+  margin-top: -42px;
+  right: 0;
+
+}
+
+.notifications-icon {
+ margin-right: 10px;
+ margin-top: 2px;
+  cursor: pointer;
+  color: rgb(13, 74, 255);
+  font-size: 20px;
+}
+
+
+.personal-icons {
+  position: relative;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 4px;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  color: rgb(0, 0, 0);
+}
+
+.personal-icons h4 {
+  margin: 0 0 0 8px;
+  font-size: 16px;
+  color: rgb(0, 0, 0);
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #ffffff;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  width: 150px;
+  border-radius: 4px;
+}
+
+.dropdown-item {
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #ddd;
+}
+
+.dropdown-item:hover {
+  background-color: #f0f0f0;
+}
+
+.show {
+  display: block;
+}
+.welcome{
+  display: flex;
+  justify-content: flex-end;
+}

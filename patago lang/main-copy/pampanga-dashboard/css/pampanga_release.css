@@ -1,0 +1,204 @@
+.flex-container {
+    display: flex;
+    /* Use flexbox to align containers */
+    position: relative;
+    flex-direction: column;
+    /* Stack containers vertically */
+    align-items: center;
+    /* Center the containers horizontally */
+    margin-top: 20px;
+    margin-left: -350px;
+  }
+  
+  /* Container Styles */
+  
+  .container1,
+  .container2 {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    /* Original border */
+    border-radius: 5px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    /* Set a specific width for the containers */
+    margin-bottom: 10px;
+    /* Adjusted bottom margin */
+  }
+  
+  /* Customer and Product Details Styles */
+  
+  .customer-details,
+  .product-details {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    /* Space between items */
+  }
+  
+  /* Input Styles */
+  
+  .nova-input {
+    display: flex;
+    /* Use flexbox for layout */
+    align-items: center;
+    /* Center items vertically */
+    margin-bottom: 10px;
+    /* Space between inputs */
+  }
+  
+  .nova-input span {
+    margin-right: 15px;
+    /* Space between label and input */
+    width: 150px;
+    /* Fixed width for labels (adjust as needed) */
+  }
+  
+  .nova-input input,
+  .nova-input select {
+    flex-grow: 1;
+    /* Allow input/select to use remaining space */
+  }
+  
+  input[type="text"],
+  input[type="number"],
+  select {
+    padding: 9px;
+    /* Padding for a comfortable touch */
+    border: 1px solid #ccc;
+    /* Original border */
+    border-radius: 4px;
+    font-size: 12px;
+    /* Font size for better readability */
+    transition: border-color 0.3s, box-shadow 0.3s;
+    /* Transition for box-shadow */
+    flex: 1;
+    /* Allow inputs to grow and fill available space */
+    background-color: #fff;
+    /* Set a background color */
+    margin-bottom: 15px;
+    /* Add space below each input/select */
+  }
+  
+  /* Focus styles */
+  
+  input[type="text"]:focus,
+  input[type="number"]:focus,
+  select:focus {
+    border-color: #007bff;
+    /* Change border color on focus */
+    outline: none;
+    /* Remove default outline */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    /* Add a subtle shadow effect */
+  }
+  
+  /* Optional: Add styles for disabled inputs */
+  
+  input[type="text"]:disabled,
+  input[type="number"]:disabled,
+  select:disabled {
+    background-color: #f9f9f9;
+    /* Light gray background for disabled inputs */
+    border-color: #ddd;
+    /* Lighter border for disabled inputs */
+    color: #aaa;
+    /* Gray text for disabled inputs */
+  }
+  
+  .customer-details span:first-child {
+    margin-left: 30px;
+    /* Add space above the first input */
+  }
+  
+  .product-details span:last-child {
+    margin-left: 30px;
+    /* Add space below the last input */
+  }
+  
+  /* Button Styles */
+  
+  button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-right: 10px;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  #orderedItems {
+    margin-top: 20px;
+    max-height: 200px;
+    /* Set a maximum height for the ordered items container */
+    overflow-y: auto;
+    /* Enable vertical scrolling */
+    padding: 10px;
+    /* Optional: Add some padding */
+    background-color: #f9f9f9;
+    /* Optional: Set a background color */
+  }
+  
+  .ordered-item {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    /* Original border */
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    /* Use flexbox to align items */
+    flex-wrap: wrap;
+    /* Allow items to wrap if necessary */
+    gap: 10px;
+    /* Space between items */
+  }
+  
+  .ordered-item span {
+    margin-right: 10px;
+    /* Space between each field */
+  }
+  
+  .delete {
+    background-color: #dc3545;
+    border: none;
+    /* Remove default border */
+    color: white;
+    /* Text color */
+    border-radius: 4px;
+    /* Rounded corners */
+    padding: 5px 10px;
+    /* Padding for the button */
+    cursor: pointer;
+    /* Pointer cursor on hover */
+    margin-left: auto;
+    /* Push the delete button to the right */
+  }
+  
+  .delete:hover {
+    background-color: #c82333;
+    /* Darker red on hover */
+  }
+  
+  /* Responsive adjustments */
+  
+  @media (max-width: 900px) {
+    .flex-container {
+      flex-direction: column;
+      /* Stack containers on smaller screens */
+      align-items: center;
+      /* Center items vertically */
+    }
+    .nova-input {
+      flex-direction: row;
+      /* Keep inputs in a row on larger screens */
+    }
+  }
+  

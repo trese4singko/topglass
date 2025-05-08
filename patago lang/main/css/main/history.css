@@ -1,0 +1,49 @@
+h1 {
+    color: #333;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    font-size: 2em;
+}
+
+.table-wrapper {
+    max-height: 550px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border: 1px solid #ddd;
+}
+
+.activity-table {
+    width: 95%;
+    border-collapse: collapse;
+}
+
+.activity-table th,
+.activity-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.activity-table th {
+    background-color: #007bff;
+    color: white;
+}
+
+tbody {
+    background-color: white;
+}
+
+.activity-table td {
+    word-wrap: break-word;
+    color: #555;
+}
+
+.activity-table td:first-child {
+    font-weight: bold;
+    color: #007bff;
+}
